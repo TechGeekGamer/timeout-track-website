@@ -17,6 +17,14 @@ function openSupportServerInvite() {
   window.open("https://discord.gg/zaK2YAMH4u");
 }
 
+function openPP() {
+  window.open("docs/TimeoutTrackPrivacyPolicy.pdf");
+}
+
+function openTOS() {
+  window.open("docs/TimeoutTrackTermsofService.pdf");
+}
+
 function scrollToFeatures() {
   document
     .getElementById("featuresSection")
@@ -27,7 +35,7 @@ function Home() {
   return (
     <div>
       {/* Main */}
-      <div className="mx-auto h-screen grid bg-gradient-to-br from-red-300 to-red-500 px-5">
+      <div className="mx-auto h-screen grid bg-gradient-to-br from-rose-400 to-rose-500 px-5">
         <div className="my-auto">
           <div className="text-center">
             <div className="inline-flex gap-2">
@@ -165,8 +173,8 @@ function Home() {
       </div>
 
       {/* CTA */}
-      <div className="mx-auto h-screen grid bg-gradient-to-br from-red-300 to-red-500 px-5">
-        <div className="my-auto">
+      <div className="mx-auto h-screen grid bg-gradient-to-br from-rose-400 to-rose-500 px-5">
+        <div className="my-auto container">
           <div className="text-center">
             <div className="inline-flex gap-2">
               <h1 className="text-center text-7xl py-2 font-bold text-white">
@@ -174,49 +182,53 @@ function Home() {
               </h1>
             </div>
           </div>
-          <div className="text-center py-10 md:px-96">
-            <div className="">
-              <button
-                className="btn-primary hover:scale-x-105 transition-all place-self-center w-72"
-                onClick={openAddBot}
-              >
-                Invite Bot
-              </button>
-            </div>
+          <div className="text-center py-10">
+            <button
+              className="btn-primary hover:scale-x-105 transition-all w-80"
+              onClick={openAddBot}
+            >
+              Invite Bot
+            </button>
           </div>
-          <div className="text-center py-2 md:px-96">
-            <div className="inline-flex gap-2 flex-col md:flex-row">
-              <button
-                className="btn-info hover:scale-105 transition-all w-48"
-                onClick={openTogGG}
-              >
-                Upvote on Top.GG
-              </button>
-              <button
-                className="btn-info hover:scale-105 transition-all w-48"
-                onClick={openSupportServerInvite}
-              >
-                Join Support Server
-              </button>
-              <button
-                className="btn-info hover:scale-105 transition-all w-48"
-                onClick={openDEL}
-              >
-                Upvote on DEL
-              </button>
+          <div className="text-center py-2">
+            <div className="inline-flex gap-2 flex-col md:flex-row content-center">
+              <div>
+                <button
+                  className="btn-info hover:scale-105 transition-all w-48"
+                  onClick={openTogGG}
+                >
+                  Upvote on Top.GG
+                </button>
+              </div>
+              <div>
+                <button
+                  className="btn-info hover:scale-105 transition-all w-48"
+                  onClick={openSupportServerInvite}
+                >
+                  Join Support Server
+                </button>
+              </div>
+              <div>
+                <button
+                  className="btn-info hover:scale-105 transition-all w-48"
+                  onClick={openDEL}
+                >
+                  Upvote on DEL
+                </button>
+              </div>
             </div>
           </div>
           <div className="text-center py-2">
             <div className="inline-flex gap-2 flex-col md:flex-row">
               <button
                 className="btn-secondary hover:scale-105 transition-all w-48"
-                onClick={openTogGG}
+                onClick={openPP}
               >
                 Privacy Policy
               </button>
               <button
                 className="btn-secondary hover:scale-105 transition-all w-48"
-                onClick={openSupportServerInvite}
+                onClick={openTOS}
               >
                 Terms of Service
               </button>
