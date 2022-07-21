@@ -57,13 +57,12 @@ class ErrorBoundary extends React.Component {
       // You can render any custom fallback UI
       return (
         <Modal
-          size="md"
           isModalOpen={true}
           disableClosing={true}
           content={`${
             process.env.NODE_ENV === "development"
               ? 'Oops, something broke. "fix it nerd" - hax4dayz#9094'
-              : "Something went wrong while running the application. Don't worry, the issue has been reported to our team and will be fixed as soon as possible. Sorry for the inconvenience."
+              : "Something went wrong while running the application."
           }`}
           rawContent={
             <div>

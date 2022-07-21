@@ -12,7 +12,6 @@ export default function Modal({
   disableButton = false,
   buttonAction,
   buttonsOverride,
-  size = "md",
 }) {
   function closeModal() {
     if (disableClosing) return;
@@ -46,7 +45,7 @@ export default function Modal({
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel
-                className={`w-full max-w-${size} transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all`}
+                className={`w-full max-w-lg transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all`}
               >
                 <Dialog.Title
                   as="h3"

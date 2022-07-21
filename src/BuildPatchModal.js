@@ -25,7 +25,6 @@ function BuildPatchModal() {
   }
   return (
     <Modal
-      size="sm"
       isModalOpen={isOpen}
       setIsModalOpen={setIsOpen}
       rawContent={
