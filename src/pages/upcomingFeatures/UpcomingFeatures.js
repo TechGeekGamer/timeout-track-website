@@ -11,8 +11,8 @@ const features = [
 
 function UpcomingFeatures() {
   return (
-    <div className="bg-red-400 max-h-full">
-      <div className="mx-auto h-screen grid bg-red-400 px-5">
+    <body class="h-screen bg-red-400">
+      <div className="h-screen mx-auto grid bg-red-400 px-5">
         <div className="my-auto">
           <div className="text-center">
             <h1 className="text-center text-4xl py-2 font-bold text-white">
@@ -22,9 +22,12 @@ function UpcomingFeatures() {
               <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                   <div className="flex flex-wrap -m-4">
-                    {features.map((feat) => {
+                    {features.map((feat, i) => {
                       return (
-                        <div className="p-4 md:w-1/3 mx-auto drop-shadow-2xl">
+                        <div
+                          className="p-4 md:w-1/3 mx-auto drop-shadow-2xl"
+                          key={i}
+                        >
                           <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden bg-white">
                             {feat.img && (
                               <img
@@ -65,7 +68,7 @@ function UpcomingFeatures() {
           </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 }
 
