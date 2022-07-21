@@ -177,7 +177,7 @@ function Home() {
           <div className="text-center py-10 md:px-96">
             <div className="">
               <button
-                className="btn-primary hover:scale-x-105 transition-all place-self-center w-full"
+                className="btn-primary hover:scale-x-105 transition-all place-self-center w-72"
                 onClick={openAddBot}
               >
                 Invite Bot
