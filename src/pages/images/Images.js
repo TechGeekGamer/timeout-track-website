@@ -54,10 +54,10 @@ function Images() {
             </h1>
           </div>
           <div class="flex flex-wrap -m-4">
-            {features.map((feat) => {
+            {features.map((feat, i) => {
               return (
                 // https://tailblocks.cc/
-                <div class="p-4 mx-auto">
+                <div class="p-4 mx-auto" key={i}>
                   <a href={feat.img} target="_blank" rel="noreferrer">
                     <div class="flex relative">
                       <img
