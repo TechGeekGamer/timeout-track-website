@@ -15,12 +15,22 @@ function UpcomingFeatures() {
       <div className="h-screen mx-auto grid bg-red-400 px-5">
         <div className="my-auto">
           <div className="text-center">
-            <h1 className="text-center text-4xl py-2 font-bold text-white">
+            <div className="text-center py-2 pt-5">
+              <div className="inline-flex gap-2">
+                <button
+                  className="btn-primary hover:scale-105 transition-all grow w-48"
+                  onClick={() => window.history.back()}
+                >
+                  Go back
+                </button>
+              </div>
+            </div>
+            <h1 className="text-center text-4xl font-bold text-white">
               Upcoming Features
             </h1>
             <div className="text-center">
               <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
+                <div className="container px-5 py-10 mx-auto">
                   <div className="flex flex-wrap -m-4">
                     {features.map((feat, i) => {
                       return (
@@ -54,16 +64,6 @@ function UpcomingFeatures() {
                   </div>
                 </div>
               </section>
-              <div className="text-center px-2 py-2">
-                <div className="inline-flex gap-2">
-                  <button
-                    className="btn-primary hover:scale-105 transition-all grow w-48"
-                    onClick={() => window.history.back()}
-                  >
-                    Go back
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
