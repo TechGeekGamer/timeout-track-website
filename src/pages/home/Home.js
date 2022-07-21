@@ -73,7 +73,7 @@ function Home() {
           <div className="flex flex-col-reverse md:flex-row gap-10 py-5">
             <div>
               <img
-                className="storyImage floatAndEnlargeOnHover"
+                className="storyImage"
                 src="images/builtin_discord_timeout_tracked_end_dm_prompt.png"
                 alt="Prompt to send a DM to a user the reason they've been timed out"
               />
@@ -105,7 +105,7 @@ function Home() {
             </div>
             <div>
               <img
-                className="storyImage floatAndEnlargeOnHover"
+                className="storyImage"
                 src="images/builtin_discord_timeout_tracked_start.png"
                 alt="Bot notification of a user being timed out"
               />
@@ -115,7 +115,7 @@ function Home() {
           <div className="flex flex-col-reverse md:flex-row gap-10 py-5">
             <div className="">
               <img
-                className="storyImage floatAndEnlargeOnHover"
+                className="storyImage"
                 src="images/builtin_discord_automod_detected_word_DM.png"
                 alt=""
               />
