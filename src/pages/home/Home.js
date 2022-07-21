@@ -27,7 +27,7 @@ function Home() {
   return (
     <div>
       {/* Main */}
-      <div className="mx-auto h-screen grid bg-red-400 px-5">
+      <div className="mx-auto h-screen grid bg-gradient-to-br from-red-300 to-red-500 px-5">
         <div className="my-auto">
           <div className="text-center">
             <div className="inline-flex gap-2">
@@ -165,22 +165,44 @@ function Home() {
       </div>
 
       {/* CTA */}
-      <div className="mx-auto h-screen grid bg-red-400 px-5">
+      <div className="mx-auto h-screen grid bg-gradient-to-br from-red-300 to-red-500 px-5">
         <div className="my-auto">
-          <div className="text-center pb-5">
+          <div className="text-center">
             <div className="inline-flex gap-2">
-              <h1 className="text-center text-4xl py-2 font-bold text-white">
+              <h1 className="text-center text-7xl py-2 font-bold text-white">
                 So, what are you waiting for?
               </h1>
             </div>
           </div>
-          <div className="text-center py-2">
-            <div className="inline-flex gap-2 flex-col md:flex-row">
+          <div className="text-center py-10 md:px-96">
+            <div className="">
               <button
-                className="btn-primary hover:scale-105 transition-all place-self-center grow w-48"
+                className="btn-primary hover:scale-x-105 transition-all place-self-center w-full"
                 onClick={openAddBot}
               >
                 Invite Bot
+              </button>
+            </div>
+          </div>
+          <div className="text-center py-2 md:px-96">
+            <div className="inline-flex gap-2 flex-col md:flex-row">
+              <button
+                className="btn-info hover:scale-105 transition-all w-48"
+                onClick={openTogGG}
+              >
+                Upvote on Top.GG
+              </button>
+              <button
+                className="btn-info hover:scale-105 transition-all w-48"
+                onClick={openSupportServerInvite}
+              >
+                Join Support Server
+              </button>
+              <button
+                className="btn-info hover:scale-105 transition-all w-48"
+                onClick={openDEL}
+              >
+                Upvote on DEL
               </button>
             </div>
           </div>
@@ -190,19 +212,13 @@ function Home() {
                 className="btn-secondary hover:scale-105 transition-all w-48"
                 onClick={openTogGG}
               >
-                Upvote on Top.GG
+                Privacy Policy
               </button>
               <button
                 className="btn-secondary hover:scale-105 transition-all w-48"
                 onClick={openSupportServerInvite}
               >
-                Join Support Server
-              </button>
-              <button
-                className="btn-secondary hover:scale-105 transition-all w-48"
-                onClick={openDEL}
-              >
-                Upvote on DEL
+                Terms of Service
               </button>
             </div>
           </div>
