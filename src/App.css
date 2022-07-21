@@ -17,6 +17,12 @@
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
+
 .storyImage {
   @apply object-cover object-center w-full h-full rounded-xl drop-shadow-2xl shadow-2xl border-red-500 border-opacity-80;
 }
