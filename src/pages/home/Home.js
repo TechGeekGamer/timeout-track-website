@@ -84,7 +84,7 @@ function Home() {
           <h1 className="text-center text-4xl py-2 font-bold">Features</h1>
 
           <div className="flex flex-col-reverse md:flex-row gap-10 py-5">
-            <div>
+            <div className="md:w-1/2">
               <img
                 className="storyImage"
                 src="images/builtin_discord_timeout_tracked_end_dm_prompt.png"
@@ -92,7 +92,7 @@ function Home() {
               />
             </div>
 
-            <div className="mx-auto">
+            <div className="mx-auto md:w-1/2">
               <h1 className="title-font text-2xl font-medium text-gray-900 mb-3 text-center">
                 Send Reason to DM
               </h1>
@@ -106,7 +106,7 @@ function Home() {
           </div>
 
           <div className="flex flex-col md:flex-row gap-10 py-5">
-            <div className="mx-auto">
+            <div className="mx-auto md:w-1/2">
               <h1 className="title-font text-2xl font-medium text-gray-900 mb-3 text-center">
                 Logging Feature
               </h1>
@@ -116,7 +116,7 @@ function Home() {
                 command and the reason they did so.
               </p>
             </div>
-            <div>
+            <div className="md:w-3/4">
               <img
                 className="storyImage"
                 src="images/builtin_discord_timeout_tracked_start.png"
@@ -126,14 +126,14 @@ function Home() {
           </div>
 
           <div className="flex flex-col-reverse md:flex-row gap-10 py-5">
-            <div className="">
+            <div className="md:w-1/2">
               <img
                 className="storyImage"
                 src="images/builtin_discord_automod_detected_word_DM.png"
                 alt=""
               />
             </div>
-            <div className="mx-auto">
+            <div className="mx-auto md:w-1/2">
               <h1 className="title-font text-2xl font-medium text-gray-900 mb-3 text-center">
                 <a
                   className="text-blue-400 hover:text-blue-500"
@@ -161,7 +161,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="text-center">
+        <div className="text-center py-10">
           <div className="inline-flex gap-2">
             <NavLink to={"/upcoming"}>
               <button className="btn-primary hover:scale-105 transition-all grow w-48">
@@ -175,23 +175,33 @@ function Home() {
             </NavLink> */}
           </div>
         </div>
-        <div className="container py-10">
-          <div className="mx-auto text-center border-4 border-opacity-50 w-4/5 shadow-xl rounded-lg">
-            <div className="flex flex-col md:flex-row flex-wrap">
-              <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
-                <EmojiHappyIcon className="mx-auto w-20 text-primary-600" />
-                <h3 className="text-3xl font-bold text-primary-600">60+</h3>
-                <h3 className="text-xl text-secondary-500">Servers</h3>
-              </div>
-              <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
-                <ClockIcon className="mx-auto w-20 text-primary-600" />
-                <h3 className="text-3xl font-bold text-primary-600">24 / 7</h3>
-                <h3 className="text-xl text-secondary-500">Uptime</h3>
-              </div>
-              <div className="border-b-2 md:border-b-0 md:border-r-4 last:border-r-0 last:border-b-0 p-5 grow">
-                <SwitchHorizontalIcon className="mx-auto w-20 text-primary-600" />
-                <h3 className="text-3xl font-bold text-primary-600">Low</h3>
-                <h3 className="text-xl text-secondary-500">Latency</h3>
+      </div>
+
+      {/* Stats */}
+      <div className="mx-auto grid bg-gradient-to-br from-secondary-600 to-secondary-700 px-5 py-10">
+        <div className="my-auto">
+          <div className="text-center">
+            <div className="container py-10">
+              <div className="mx-auto text-center border-4 border-opacity-50 w-4/5 shadow-xl rounded-lg bg-white">
+                <div className="flex flex-col md:flex-row flex-wrap">
+                  <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
+                    <EmojiHappyIcon className="mx-auto w-20 text-primary-600" />
+                    <h3 className="text-3xl font-bold text-primary-600">60+</h3>
+                    <h3 className="text-xl text-secondary-500">Servers</h3>
+                  </div>
+                  <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
+                    <ClockIcon className="mx-auto w-20 text-primary-600" />
+                    <h3 className="text-3xl font-bold text-primary-600">
+                      24 / 7
+                    </h3>
+                    <h3 className="text-xl text-secondary-500">Uptime</h3>
+                  </div>
+                  <div className="border-b-2 md:border-b-0 md:border-r-4 last:border-r-0 last:border-b-0 p-5 grow">
+                    <SwitchHorizontalIcon className="mx-auto w-20 text-primary-600" />
+                    <h3 className="text-3xl font-bold text-primary-600">Low</h3>
+                    <h3 className="text-xl text-secondary-500">Latency</h3>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -203,7 +213,7 @@ function Home() {
         <div className="my-auto container">
           <div className="text-center">
             <div className="inline-flex gap-2">
-              <h1 className="text-center text-7xl py-2 font-bold text-white">
+              <h1 className="text-center text-5xl md:text-7xl py-2 font-bold text-white">
                 So, what are you waiting for?
               </h1>
             </div>
