@@ -4,13 +4,16 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-700 disabled:bg-primary-200 text-white font-bold py-2 px-4 rounded-full scale-100 shadow-xl drop-shadow-xl;
+    @apply bg-primary-500 hover:bg-primary-700 focus:bg-primary-700 disabled:bg-primary-200 text-white font-bold py-2 px-4 rounded-full scale-100 shadow-xl drop-shadow-xl;
+    @apply hover:scale-105 focus:scale-105 transition-all;
   }
   .btn-secondary {
-    @apply bg-secondary-500 hover:bg-secondary-700 disabled:bg-secondary-200 text-white font-bold py-2 px-4 rounded-full scale-100 shadow-xl drop-shadow-xl;
+    @apply bg-secondary-500 hover:bg-secondary-700 focus:bg-secondary-700 disabled:bg-secondary-200 text-white font-bold py-2 px-4 rounded-full scale-100 shadow-xl drop-shadow-xl;
+    @apply hover:scale-105 focus:scale-105 transition-all;
   }
   .btn-info {
-    @apply bg-info-600 hover:bg-info-800 disabled:bg-info-300 text-white font-bold py-2 px-4 rounded-full scale-100 shadow-xl drop-shadow-xl;
+    @apply bg-info-600 hover:bg-info-800 focus:bg-info-800 disabled:bg-info-300 text-white font-bold py-2 px-4 rounded-full scale-100 shadow-xl drop-shadow-xl;
+    @apply hover:scale-105 focus:scale-105 transition-all;
   }
   .btn-discord-login {
     @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl scale-100;

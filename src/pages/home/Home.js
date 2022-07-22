@@ -60,10 +60,7 @@ function Home() {
             Improved Discord Timeout logging
           </p>
           <div className="text-center py-5">
-            <button
-              className="btn-primary hover:scale-105 transition-all w-48"
-              onClick={openAddBot}
-            >
+            <button className="btn-primary w-48" onClick={openAddBot}>
               Invite Bot
             </button>
           </div>
@@ -163,10 +160,8 @@ function Home() {
         </div>
         <div className="text-center py-10">
           <div className="inline-flex gap-2">
-            <NavLink to={"/upcoming"}>
-              <button className="btn-primary hover:scale-105 transition-all grow w-48">
-                Upcoming Features
-              </button>
+            <NavLink to={"/upcoming"} className="btn-primary grow w-48">
+              Upcoming Features
             </NavLink>
             {/* <NavLink to={"/images"}>
               <button className="btn-primary hover:scale-105 transition-all grow w-48">
@@ -219,10 +214,7 @@ function Home() {
             </div>
           </div>
           <div className="text-center py-10">
-            <button
-              className="btn-primary hover:scale-x-105 transition-all w-80"
-              onClick={openAddBot}
-            >
+            <button className="btn-primary w-80" onClick={openAddBot}>
               Invite Bot
             </button>
           </div>
