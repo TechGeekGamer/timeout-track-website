@@ -1,4 +1,9 @@
 import { NavLink } from "react-router-dom";
+import {
+  ClockIcon,
+  EmojiHappyIcon,
+  SwitchHorizontalIcon,
+} from "@heroicons/react/solid";
 
 function openAddBot() {
   window.open(
@@ -168,6 +173,27 @@ function Home() {
                 Images
               </button>
             </NavLink> */}
+          </div>
+        </div>
+        <div className="container py-10">
+          <div className="mx-auto text-center border-4 border-opacity-50 w-4/5 shadow-xl rounded-lg">
+            <div className="flex flex-col md:flex-row flex-wrap">
+              <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
+                <EmojiHappyIcon className="mx-auto w-20 text-primary-600" />
+                <h3 className="text-3xl font-bold text-primary-600">60+</h3>
+                <h3 className="text-xl text-secondary-500">Servers</h3>
+              </div>
+              <div className="border-b-2 md:border-b-0 md:border-r-4 last:border-r-0 p-5 grow">
+                <ClockIcon className="mx-auto w-20 text-primary-600" />
+                <h3 className="text-3xl font-bold text-primary-600">24 / 7</h3>
+                <h3 className="text-xl text-secondary-500">Uptime</h3>
+              </div>
+              <div className="border-b-2 md:border-b-0 md:border-r-4 last:border-r-0 p-5 grow">
+                <SwitchHorizontalIcon className="mx-auto w-20 text-primary-600" />
+                <h3 className="text-3xl font-bold text-primary-600">Low</h3>
+                <h3 className="text-xl text-secondary-500">Latency</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
