@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
 import {
   ClockIcon,
   EmojiHappyIcon,
   SwitchHorizontalIcon,
 } from "@heroicons/react/solid";
+import UpcomingFeatures from "../../components/UpcomingFeatures";
 
 function openAddBot() {
   window.open(
@@ -158,30 +158,33 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="text-center py-10">
-          <div className="inline-flex gap-2">
-            <NavLink to={"/upcoming"} className="btn-primary grow w-48">
-              Upcoming Features
-            </NavLink>
-            {/* <NavLink to={"/images"}>
-              <button className="btn-primary hover:scale-105 transition-all grow w-48">
-                Images
-              </button>
-            </NavLink> */}
-          </div>
+      </div>
+
+      {/* Upcoming Features */}
+      <div className="mx-auto grid bg-red-400 px-5 py-10">
+        <div className="px-10">
+          <h1 className="text-center text-4xl py-2 font-bold text-white">
+            Planned Features
+          </h1>
+          <UpcomingFeatures />
         </div>
       </div>
 
       {/* Stats */}
       <div className="mx-auto grid bg-gradient-to-br from-secondary-600 to-secondary-700 px-5 py-10">
+        <div className="px-10">
+          <h1 className="text-center text-4xl py-2 font-bold text-white">
+            Statistics
+          </h1>
+        </div>
         <div className="my-auto">
           <div className="text-center">
-            <div className="container py-10">
+            <div className="container py-10 mx-auto">
               <div className="mx-auto text-center border-4 border-opacity-50 w-4/5 shadow-xl rounded-lg bg-white">
                 <div className="flex flex-col md:flex-row flex-wrap">
                   <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
                     <EmojiHappyIcon className="mx-auto w-20 text-primary-600" />
-                    <h3 className="text-3xl font-bold text-primary-600">60+</h3>
+                    <h3 className="text-3xl font-bold text-primary-600">70+</h3>
                     <h3 className="text-xl text-secondary-500">Servers</h3>
                   </div>
                   <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
@@ -205,7 +208,7 @@ function Home() {
 
       {/* CTA */}
       <div className="mx-auto h-screen grid bg-gradient-to-br from-rose-400 to-rose-500 px-5">
-        <div className="my-auto container">
+        <div className="my-auto container mx-auto">
           <div className="text-center">
             <div className="inline-flex gap-2">
               <h1 className="text-center text-5xl md:text-7xl py-2 font-bold text-white">
