@@ -2,6 +2,7 @@ const features = [
   {
     title: "Tracked Reason Logging",
     desc: "Don't rely on Discord's 90 day audit logs or scroll through an entire log channel- have a persistent record of timeouts enacted on a user, keeping track of who timed them out, when, and why all from one command!",
+    beta: true,
   },
   {
     title: "Web Dashboard",
@@ -27,8 +28,19 @@ function UpcomingFeatures() {
                       />
                     )}
                     <div className="p-6">
-                      <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                      <h2
+                        hidden={feat.beta}
+                        class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
+                      >
                         UPCOMING FEATURE
+                      </h2>
+                      <h2
+                        hidden={!feat.beta}
+                        class="tracking-widest text-xs title-font font-bold text-blue-400 mb-1"
+                      >
+                        BETA
+                        <br />
+                        AVAILABLE TO LIMITED AMOUNT OF SERVERS
                       </h2>
                       <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                         {feat.title}
