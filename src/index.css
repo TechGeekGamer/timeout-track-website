@@ -18,6 +18,16 @@
   .btn-discord-login {
     @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl scale-100;
   }
+  .discord-bg {
+    background-color: rgb(55, 57, 62);
+  }
+  .discord-border-color {
+    border-color: rgb(55, 57, 62);
+  }
+  .beta-badge {
+    @apply text-center border rounded-full p-0 text-blue-500 border-blue-500 dark:text-white dark:border-blue-400 dark:bg-blue-500 bg-blue-500;
+    transition: 0.2s;
+  }
 }
 
 body {
