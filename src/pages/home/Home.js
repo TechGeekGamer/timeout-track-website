@@ -1,8 +1,11 @@
 import {
   ClockIcon,
   EmojiHappyIcon,
+  ExclamationCircleIcon,
+  InformationCircleIcon,
   SwitchHorizontalIcon,
 } from "@heroicons/react/solid";
+import FeatureCard from "../../components/FeatureCard";
 import UpcomingFeatures from "../../components/UpcomingFeatures";
 
 function openAddBot() {
@@ -77,72 +80,42 @@ function Home() {
 
       {/* Features */}
       <div className="container py-10 mx-auto px-5" id="featuresSection">
-        <div className="px-10">
-          <h1 className="text-center text-4xl py-2 font-bold">Features</h1>
+        <div className="px-5 md:px-10">
+          <h1 className="text-center text-4xl py-1 mb-10 font-bold">
+            Features
+          </h1>
 
-          <div className="flex flex-col-reverse md:flex-row gap-10 py-5">
-            <div className="md:w-1/2">
-              <img
-                className="storyImage"
-                src="images/builtin_discord_timeout_tracked_end_dm_prompt.png"
-                alt="Prompt to send a DM to a user the reason they've been timed out"
-              />
-            </div>
-
-            <div className="mx-auto md:w-1/2">
-              <h1 className="title-font text-2xl font-medium text-gray-900 mb-3 text-center">
-                Send Reason to DM
-              </h1>
-              <p className="leading-relaxed text-lg">
+          <FeatureCard
+            title={"Send Reason to DM"}
+            content={
+              <>
                 TimeoutTrack offers the ability to send the timeout reason to
                 the timed out user, something Discord doesn't already do. This
                 helps with users not being confused on <i>why</i> they were
                 timed out.
-              </p>
-            </div>
-          </div>
+              </>
+            }
+            imageURL="images/builtin_discord_timeout_tracked_end_dm_prompt.png"
+            imageAlt="Prompt to send a DM to a user the reason they've been timed out"
+          />
 
-          <div className="flex flex-col md:flex-row gap-10 py-5">
-            <div className="mx-auto md:w-1/2">
-              <h1 className="title-font text-2xl font-medium text-gray-900 mb-3 text-center">
-                Logging Feature
-              </h1>
-              <p className="leading-relaxed text-lg">
+          <FeatureCard
+            title={"Logging Feature"}
+            content={
+              <>
                 Whenever a timeout is enacted/ended early, your set log channel
                 will have a message sent to it informing of <i>who</i> ran the
                 command and the reason they did so.
-              </p>
-            </div>
-            <div className="md:w-3/4">
-              <img
-                className="storyImage"
-                src="images/builtin_discord_timeout_tracked_start.png"
-                alt="Bot notification of a user being timed out"
-              />
-            </div>
-          </div>
+              </>
+            }
+            imageURL="images/builtin_discord_timeout_tracked_start.png"
+            // flipImgAndText
+          />
 
-          <div className="flex flex-col-reverse md:flex-row gap-10 py-5">
-            <div className="md:w-1/2">
-              <img
-                className="storyImage"
-                src="images/builtin_discord_automod_detected_word_DM.png"
-                alt=""
-              />
-            </div>
-            <div className="mx-auto md:w-1/2">
-              <h1 className="title-font text-2xl font-medium text-gray-900 mb-3 text-center">
-                <a
-                  className="text-blue-400 hover:text-blue-500"
-                  href="https://support.discord.com/hc/en-us/articles/4421269296535"
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  Discord AutoMod
-                </a>{" "}
-                Support
-              </h1>
-              <p className="leading-relaxed text-lg">
+          <FeatureCard
+            title={"Discord AutoMod Support"}
+            content={
+              <>
                 If someone breaks a{" "}
                 <a
                   className="text-blue-400 hover:text-blue-500"
@@ -152,17 +125,46 @@ function Home() {
                 >
                   Discord AutoMod
                 </a>{" "}
-                rule, and that rule times them out, they'll be sent a DM saying
-                what word in their message was against the rules.
-              </p>
-            </div>
-          </div>
+                rule, and one of the actions are to timeout, they'll be sent a
+                DM explaining why they got timed out.
+                <br />
+                <ExclamationCircleIcon className="w-4 text-yellow-500 mx-auto mt-2" />
+                <span className="italic inline-flex text-sm">
+                  Bot must have the Manage Server permission to detect this
+                </span>
+              </>
+            }
+            imageURL="images/builtin_discord_automod_detected_word_DM.png"
+          />
+
+          <FeatureCard
+            title={"Persistent Logging"}
+            content={
+              <>
+                Don't rely on Discord's 90 day audit logs or scroll through an
+                entire log channel- have a persistent record of timeouts enacted
+                on a user, keeping track of who timed them out, when, and why
+                all from one command!
+                <br />
+                <InformationCircleIcon className="w-4 text-blue-500 mx-auto mt-2" />
+                <button
+                  className="italic inline-flex text-sm border-b-2 underline"
+                  onClick={openSupportServerInvite}
+                >
+                  You can request access by joining the support server
+                </button>
+              </>
+            }
+            imageURL="images/log_command.png"
+            isBeta
+            // flipImgAndText
+          />
         </div>
       </div>
 
       {/* Upcoming Features */}
       <div className="mx-auto grid bg-red-400 px-5 py-10">
-        <div className="px-10">
+        <div className="px-5 md:px-10">
           <h1 className="text-center text-4xl py-2 font-bold text-white">
             Planned Features
           </h1>
@@ -172,7 +174,7 @@ function Home() {
 
       {/* Stats */}
       <div className="mx-auto grid bg-gradient-to-br from-secondary-600 to-secondary-700 px-5 py-10">
-        <div className="px-10">
+        <div className="px-5 md:px-10">
           <h1 className="text-center text-4xl py-2 font-bold text-white">
             Statistics
           </h1>
@@ -184,7 +186,9 @@ function Home() {
                 <div className="flex flex-col md:flex-row flex-wrap">
                   <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
                     <EmojiHappyIcon className="mx-auto w-20 text-primary-600" />
-                    <h3 className="text-3xl font-bold text-primary-600">70+</h3>
+                    <h3 className="text-3xl font-bold text-primary-600">
+                      100+
+                    </h3>
                     <h3 className="text-xl text-secondary-500">Servers</h3>
                   </div>
                   <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
