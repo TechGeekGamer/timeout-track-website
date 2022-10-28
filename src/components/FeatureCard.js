@@ -30,7 +30,7 @@ export default function FeatureCard({
             </span>
           )}
         </h1>
-        <p className={`leading-relaxed text-lg text-center`}>{content}</p>
+        <p className={`leading-relaxed text-lg text-center px-4`}>{content}</p>
       </div>
       <div
         className={`md:w-1/2 discord-bg shadow-xl rounded-md overflow-hidden h-full my-auto border-4 discord-border-color`}
