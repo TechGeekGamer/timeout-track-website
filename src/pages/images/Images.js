@@ -46,27 +46,27 @@ const features = [
 function Images() {
   return (
     <div className="flex flex-col py-2 md:px-10">
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col text-center w-full mb-20">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-20">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
               Images
             </h1>
           </div>
-          <div class="flex flex-wrap -m-4">
+          <div className="flex flex-wrap -m-4">
             {features.map((feat, i) => {
               return (
                 // https://tailblocks.cc/
-                <div class="p-4 mx-auto" key={i}>
+                <div className="p-4 mx-auto" key={i}>
                   <a href={feat.img} target="_blank" rel="noreferrer">
-                    <div class="flex relative">
+                    <div className="flex relative">
                       <img
                         alt={feat.img_alt}
-                        class="absolute inset-0 w-full h-full object-cover object-center"
+                        className="absolute inset-0 w-full h-full object-cover object-center"
                         src={feat.img}
                       />
-                      <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                        <h1 class="title-font text-lg font-medium text-gray-900">
+                      <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                        <h1 className="title-font text-lg font-medium text-gray-900">
                           Open in New Tab
                         </h1>
                       </div>
