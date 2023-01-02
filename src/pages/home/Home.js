@@ -13,13 +13,10 @@ import {
   DiscordCommand,
   DiscordEmbed,
   DiscordEmbedDescription,
-  DiscordEmbedField,
-  DiscordEmbedFields,
   DiscordInlineCode,
   DiscordMention,
   DiscordMessage,
   DiscordMessages,
-  DiscordReply,
 } from "@skyra/discord-components-react";
 import FeatureCard from "../../components/FeatureCard";
 import UpcomingFeatures from "../../components/UpcomingFeatures";
