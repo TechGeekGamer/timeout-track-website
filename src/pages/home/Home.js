@@ -5,6 +5,22 @@ import {
   InformationCircleIcon,
   SwitchHorizontalIcon,
 } from "@heroicons/react/solid";
+import {
+  DiscordActionRow,
+  DiscordAttachments,
+  DiscordBold,
+  DiscordButton,
+  DiscordCommand,
+  DiscordEmbed,
+  DiscordEmbedDescription,
+  DiscordEmbedField,
+  DiscordEmbedFields,
+  DiscordInlineCode,
+  DiscordMention,
+  DiscordMessage,
+  DiscordMessages,
+  DiscordReply,
+} from "@skyra/discord-components-react";
 import FeatureCard from "../../components/FeatureCard";
 import UpcomingFeatures from "../../components/UpcomingFeatures";
 
@@ -80,7 +96,7 @@ function Home() {
 
       {/* Features */}
       <div className="container py-10 mx-auto px-5" id="featuresSection">
-        <div className="px-5 md:px-10">
+        <div className="px-5 lg:px-10">
           <h1 className="text-center text-4xl py-1 mb-10 font-bold">
             Features
           </h1>
@@ -95,6 +111,55 @@ function Home() {
                 timed out.
               </>
             }
+            exampleDiscordMessages={
+              <DiscordMessages class="rounded-lg">
+                <DiscordMessage
+                  timestamp={"03/28/2022"}
+                  author="TimeoutTrack"
+                  avatar="/images/logo.png"
+                  bot
+                  verified
+                >
+                  <DiscordEmbed slot="embeds" color="#ED4245">
+                    <DiscordEmbedDescription slot="description">
+                      <DiscordMention>Daniel💻</DiscordMention> timed out{" "}
+                      <DiscordMention>MegaGlitch</DiscordMention> until{" "}
+                      <DiscordInlineCode>
+                        March 28, 2022 1:34 AM
+                      </DiscordInlineCode>
+                      . (Expires:{" "}
+                      <DiscordInlineCode>in 10 minutes</DiscordInlineCode>)
+                      <br />
+                      <DiscordBold>Reason:</DiscordBold> This is for a demo of a
+                      new TimeoutTrack feature.
+                    </DiscordEmbedDescription>
+                  </DiscordEmbed>
+                  <DiscordEmbed slot="embeds" color="#5865F2">
+                    <DiscordEmbedDescription slot="description">
+                      Hey there, I noticed you timed someone out using the
+                      built-in Discord button. This does not send the timeout
+                      reason to the user. Would you like to send the timeout
+                      reason to <DiscordMention>MegaGlitch</DiscordMention> (the
+                      timed out user) using{" "}
+                      <DiscordMention>TimeoutTrack</DiscordMention>? <br />
+                      <DiscordBold>Reason:</DiscordBold> This is for a demo of a
+                      new TimeoutTrack feature.
+                    </DiscordEmbedDescription>
+                  </DiscordEmbed>
+                  <DiscordAttachments slot="components">
+                    <DiscordActionRow>
+                      <DiscordButton type="success">Yes</DiscordButton>
+                      <DiscordButton type="destructive">No</DiscordButton>
+                      <DiscordButton type="secondary">Always Yes</DiscordButton>
+                      <DiscordButton type="secondary">Always No</DiscordButton>
+                      <DiscordButton url={"https://discord.gg/zaK2YAMH4u"}>
+                        Support Server
+                      </DiscordButton>
+                    </DiscordActionRow>
+                  </DiscordAttachments>
+                </DiscordMessage>
+              </DiscordMessages>
+            }
             imageURL="images/builtin_discord_timeout_tracked_end_dm_prompt.png"
             imageAlt="Prompt to send a DM to a user the reason they've been timed out"
           />
@@ -108,8 +173,33 @@ function Home() {
                 command and the reason they did so.
               </>
             }
+            exampleDiscordMessages={
+              <DiscordMessages class="rounded-lg">
+                <DiscordMessage
+                  timestamp={"03/28/2022"}
+                  author="TimeoutTrack"
+                  avatar="/images/logo.png"
+                  bot
+                  verified
+                >
+                  <DiscordEmbed slot="embeds" color="#ED4245">
+                    <DiscordEmbedDescription slot="description">
+                      <DiscordMention>Daniel💻</DiscordMention> timed out{" "}
+                      <DiscordMention>MegaGlitch</DiscordMention> until{" "}
+                      <DiscordInlineCode>
+                        March 28, 2022 1:34 AM
+                      </DiscordInlineCode>
+                      . (Expires:{" "}
+                      <DiscordInlineCode>in 10 minutes</DiscordInlineCode>)
+                      <br />
+                      <DiscordBold>Reason:</DiscordBold> This is for a demo of a
+                      new TimeoutTrack feature.
+                    </DiscordEmbedDescription>
+                  </DiscordEmbed>
+                </DiscordMessage>
+              </DiscordMessages>
+            }
             imageURL="images/builtin_discord_timeout_tracked_start.png"
-            // flipImgAndText
           />
 
           <FeatureCard
@@ -128,11 +218,43 @@ function Home() {
                 rule, and one of the actions are to timeout, they'll be sent a
                 DM explaining why they got timed out.
                 <br />
-                <ExclamationCircleIcon className="w-4 text-yellow-500 mx-auto mt-2" />
-                <span className="italic inline-flex text-sm">
+                <button
+                  className="italic inline-flex text-sm items-center space-x-1 underline"
+                  onClick={openSupportServerInvite}
+                >
+                  <ExclamationCircleIcon className="w-4 text-yellow-500" />
                   Bot must have the Manage Server permission to detect this
-                </span>
+                </button>
               </>
+            }
+            exampleDiscordMessages={
+              <DiscordMessages class="rounded-lg">
+                <DiscordMessage
+                  timestamp={"03/28/2022"}
+                  author="TimeoutTrack"
+                  avatar="/images/logo.png"
+                  bot
+                  verified
+                >
+                  <DiscordEmbed slot="embeds" color="#ED4245">
+                    <DiscordEmbedDescription slot="description">
+                      You have been timed out in{" "}
+                      <DiscordBold>Team Neptune 🌊</DiscordBold> until{" "}
+                      <DiscordInlineCode>
+                        March 28, 2022 1:34 AM
+                      </DiscordInlineCode>
+                      . (Expires:{" "}
+                      <DiscordInlineCode>in 10 minutes</DiscordInlineCode>)
+                      <br />
+                      <DiscordBold>Reason:</DiscordBold> Discord's AutoMod
+                      detected message content not allowed by{" "}
+                      <DiscordBold>Team Neptune 🌊</DiscordBold>,{" "}
+                      <DiscordInlineCode>cusswordtest</DiscordInlineCode>, in
+                      your recent message.
+                    </DiscordEmbedDescription>
+                  </DiscordEmbed>
+                </DiscordMessage>
+              </DiscordMessages>
             }
             imageURL="images/builtin_discord_automod_detected_word_DM.png"
           />
@@ -146,14 +268,36 @@ function Home() {
                 on a user, keeping track of who timed them out, when, and why
                 all from one command!
                 <br />
-                <InformationCircleIcon className="w-4 text-blue-500 mx-auto mt-2" />
                 <button
-                  className="italic inline-flex text-sm border-b-2 underline"
+                  className="italic inline-flex text-sm items-center space-x-1 underline"
                   onClick={openSupportServerInvite}
                 >
+                  <InformationCircleIcon className="w-4 text-blue-500" />
                   You can request access by joining the support server
                 </button>
               </>
+            }
+            exampleDiscordMessages={
+              <DiscordMessages className="rounded-lg">
+                <DiscordMessage
+                  timestamp={"03/28/2022"}
+                  author="TimeoutTrack"
+                  avatar="/images/logo.png"
+                  bot
+                  verified
+                  ephemeral
+                >
+                  <DiscordCommand command="/log"></DiscordCommand>
+                  <DiscordBold>
+                    March 28, 2022 1:34 AM - Ran by Discord AutoMod:
+                  </DiscordBold>
+                  <br />
+                  Discord's AutoMod detected message content not allowed by{" "}
+                  <DiscordBold>Team Neptune 🌊</DiscordBold>,{" "}
+                  <DiscordInlineCode>cheese</DiscordInlineCode>, in your recent
+                  message.
+                </DiscordMessage>
+              </DiscordMessages>
             }
             imageURL="images/log_command.png"
             isBeta

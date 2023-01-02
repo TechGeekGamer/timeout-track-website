@@ -3,25 +3,15 @@ export default function FeatureCard({
   content,
   imageURL,
   imageAlt,
+  exampleDiscordMessages,
   isBeta = false,
   flipImgAndText = false,
 }) {
   return (
-    <div
-      className={`flex flex-col ${
-        flipImgAndText ? "md:flex-row-reverse" : "md:flex-row"
-      } gap-10 py-5`}
-    >
-      <div
-        /**
-       * ${
-          flipImgAndText ? "md:skew-y-6" : "md:-skew-y-6"
-        } 
-       */
-        className={`mx-auto md:w-1/2 border-4 border-opacity-10 border-black p-2 rounded-md shadow-lg`}
-      >
+    <div className={`flex flex-col gap-10 py-5`}>
+      <div className="mx-auto">
         <h1
-          className={`title-font text-2xl font-bold text-gray-900 mb-3 text-center`}
+          className={`title-font text-2xl font-bold text-gray-900 mb-3 text-left`}
         >
           {title}
           {isBeta && (
@@ -30,12 +20,13 @@ export default function FeatureCard({
             </span>
           )}
         </h1>
-        <p className={`leading-relaxed text-lg text-center px-4`}>{content}</p>
+        <p className={`leading-relaxed text-lg text-left`}>{content}</p>
       </div>
-      <div
-        className={`md:w-1/2 discord-bg shadow-xl rounded-md overflow-hidden h-full my-auto border-4 discord-border-color`}
-      >
-        <img src={imageURL} alt={imageAlt} />
+      {exampleDiscordMessages && (
+        <div className="hidden lg:block w-full">{exampleDiscordMessages}</div>
+      )}
+      <div className="mx-auto lg:w-1/2 discord-bg shadow-xl rounded-md overflow-hidden h-full my-auto border-4 discord-border-color block lg:hidden">
+        {<img src={imageURL} alt={imageAlt} />}
       </div>
     </div>
   );
