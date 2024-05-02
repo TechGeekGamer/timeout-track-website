@@ -2,7 +2,8 @@ import {
   ClockIcon,
   EmojiHappyIcon,
   ExclamationCircleIcon,
-  InformationCircleIcon,
+  QuestionMarkCircleIcon,
+  StarIcon,
   SwitchHorizontalIcon,
 } from "@heroicons/react/solid";
 import {
@@ -21,30 +22,12 @@ import {
 import FeatureCard from "../../components/FeatureCard";
 import UpcomingFeatures from "../../components/UpcomingFeatures";
 
-function openAddBot() {
-  window.open(
-    "https://discord.com/api/oauth2/authorize?client_id=925577249586032641&permissions=1099511627904&scope=bot%20applications.commands"
-  );
-}
-function openTogGG() {
-  window.open("https://top.gg/bot/925577249586032641/vote");
-}
-
-function openDEL() {
-  window.open("https://discordextremelist.xyz/en-US/bots/925577249586032641");
-}
-
-function openSupportServerInvite() {
-  window.open("https://discord.gg/zaK2YAMH4u");
-}
-
-function openPP() {
-  window.open("docs/TimeoutTrackPrivacyPolicy.pdf");
-}
-
-function openTOS() {
-  window.open("docs/TimeoutTrackTermsofService.pdf");
-}
+const ADD_BOT_URL = `https://discord.com/api/oauth2/authorize?client_id=925577249586032641&permissions=1099511627904&scope=bot%20applications.commands`;
+const TOP_GG_URL = `https://top.gg/bot/925577249586032641/vote`;
+const DEL_URL = `https://discordextremelist.xyz/en-US/bots/925577249586032641`;
+const SUPPORT_SERVER_INVITE_URL = `https://discord.gg/zaK2YAMH4u`;
+const PRIVACY_POLICY_URL = `docs/TimeoutTrackPrivacyPolicy.pdf`;
+const TERMS_OF_SERVICE_URL = `docs/TimeoutTrackTermsofService.pdf`;
 
 function scrollToFeatures() {
   document
@@ -52,11 +35,50 @@ function scrollToFeatures() {
     .scrollIntoView({ behavior: "smooth" });
 }
 
+function StatCardSection({ icon, mainText, subText, extraClasses = "" }) {
+  return (
+    <div
+      className={`border-b-2 md:border-b-0 md:border-r-4 p-2 grow ${extraClasses}`}
+    >
+      {icon}
+      <h3 className="text-3xl font-bold text-primary-600">{mainText}</h3>
+      <h3 className="text-xl text-secondary-500">{subText}</h3>
+    </div>
+  );
+}
+
+function StatsCard() {
+  return (
+    <div className="my-auto text-center container py-10 mx-auto">
+      <div className="mx-auto border-4 border-opacity-50 w-4/5 shadow-xl rounded-lg bg-white">
+        <div className="grid md:grid-cols-3">
+          <StatCardSection
+            icon={<EmojiHappyIcon className="mx-auto w-20 text-primary-600" />}
+            mainText="600+"
+            subText="Servers"
+          />
+          <StatCardSection
+            icon={<ClockIcon className="mx-auto w-20 text-primary-600" />}
+            mainText="24 / 7"
+            subText="Uptime"
+          />
+          <StatCardSection
+            icon={<StarIcon className="mx-auto w-20 text-primary-600" />}
+            mainText="5 Stars"
+            subText="on Top.GG (out of 2 reviews)"
+            extraClasses="last:border-r-0 last:border-b-0"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Home() {
   return (
     <div>
       {/* Main */}
-      <div className="mx-auto h-screen grid bg-gradient-to-br from-rose-400 to-rose-500 px-5">
+      <div className="mx-auto min-h-screen grid p-2 bg-gradient-to-br from-rose-400 to-rose-500 px-5">
         <div className="my-auto">
           <div className="text-center">
             <div className="inline-flex gap-2">
@@ -67,7 +89,7 @@ function Home() {
                   alt="Bot logo"
                 />
               </div>
-              <span className="text-5xl text-center font-bold my-auto text-gray-100">
+              <span className="text-3xl text-center font-bold my-auto text-gray-100">
                 TimeoutTrack
               </span>
             </div>
@@ -75,18 +97,28 @@ function Home() {
           <p className="text-center text-lg font-bold italic pt-2 text-gray-100">
             Improved Discord Timeout logging
           </p>
-          <div className="text-center py-5">
-            <button className="btn-primary w-48" onClick={openAddBot}>
-              Invite Bot
-            </button>
-          </div>
-          <div className="text-center text-xl font-bold align-bottom">
-            <button
-              onClick={scrollToFeatures}
-              className="btn-secondary inline-flex text-base"
+          <StatsCard />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-sm mx-auto text-center">
+            <a
+              className="btn-primary max-w-screen-md w-full"
+              href={ADD_BOT_URL}
+              target="_blank"
+              rel="noreferrer"
             >
-              <span className="px-2">Learn More</span>
+              Invite Bot
+            </a>
+
+            <button onClick={scrollToFeatures} className="btn-secondary">
+              Learn More
             </button>
+            <a
+              className="btn-info max-w-screen-md w-full col-span-2"
+              href={SUPPORT_SERVER_INVITE_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Join Support Server
+            </a>
           </div>
         </div>
       </div>
@@ -215,13 +247,10 @@ function Home() {
                 rule, and one of the actions are to timeout, they'll be sent a
                 DM explaining why they got timed out.
                 <br />
-                <button
-                  className="italic inline-flex text-sm items-center space-x-1 underline"
-                  onClick={openSupportServerInvite}
-                >
+                <span className="italic inline-flex text-sm items-center space-x-1 underline">
                   <ExclamationCircleIcon className="w-4 text-yellow-500" />
                   Bot must have the Manage Server permission to detect this
-                </button>
+                </span>
               </>
             }
             exampleDiscordMessages={
@@ -264,14 +293,6 @@ function Home() {
                 entire log channel- have a persistent record of timeouts enacted
                 on a user, keeping track of who timed them out, when, and why
                 all from one command!
-                <br />
-                <button
-                  className="italic inline-flex text-sm items-center space-x-1 underline"
-                  onClick={openSupportServerInvite}
-                >
-                  <InformationCircleIcon className="w-4 text-blue-500" />
-                  You can request access by joining the support server
-                </button>
               </>
             }
             exampleDiscordMessages={
@@ -297,7 +318,6 @@ function Home() {
               </DiscordMessages>
             }
             imageURL="images/log_command.png"
-            isBeta
             // flipImgAndText
           />
         </div>
@@ -320,39 +340,11 @@ function Home() {
             Statistics
           </h1>
         </div>
-        <div className="my-auto">
-          <div className="text-center">
-            <div className="container py-10 mx-auto">
-              <div className="mx-auto text-center border-4 border-opacity-50 w-4/5 shadow-xl rounded-lg bg-white">
-                <div className="flex flex-col md:flex-row flex-wrap">
-                  <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
-                    <EmojiHappyIcon className="mx-auto w-20 text-primary-600" />
-                    <h3 className="text-3xl font-bold text-primary-600">
-                      100+
-                    </h3>
-                    <h3 className="text-xl text-secondary-500">Servers</h3>
-                  </div>
-                  <div className="border-b-2 md:border-b-0 md:border-r-4 p-5 grow">
-                    <ClockIcon className="mx-auto w-20 text-primary-600" />
-                    <h3 className="text-3xl font-bold text-primary-600">
-                      24 / 7
-                    </h3>
-                    <h3 className="text-xl text-secondary-500">Uptime</h3>
-                  </div>
-                  <div className="border-b-2 md:border-b-0 md:border-r-4 last:border-r-0 last:border-b-0 p-5 grow">
-                    <SwitchHorizontalIcon className="mx-auto w-20 text-primary-600" />
-                    <h3 className="text-3xl font-bold text-primary-600">Low</h3>
-                    <h3 className="text-xl text-secondary-500">Latency</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <StatsCard />
       </div>
 
       {/* CTA */}
-      <div className="mx-auto h-screen grid bg-gradient-to-br from-rose-400 to-rose-500 px-5">
+      <div className="mx-auto min-h-screen grid bg-gradient-to-br from-rose-400 to-rose-500 px-5">
         <div className="my-auto container mx-auto">
           <div className="text-center">
             <div className="inline-flex gap-2">
@@ -361,53 +353,64 @@ function Home() {
               </h1>
             </div>
           </div>
-          <div className="text-center py-10">
-            <button className="btn-primary w-80" onClick={openAddBot}>
+          <div className="flex text-center place-content-center py-10">
+            <a
+              className="btn-primary max-w-screen-md w-full"
+              href={ADD_BOT_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
               Invite Bot
-            </button>
+            </a>
           </div>
           <div className="text-center py-2">
             <div className="inline-flex gap-2 flex-col md:flex-row content-center">
-              <div>
-                <button
-                  className="btn-info hover:scale-105 transition-all w-48"
-                  onClick={openTogGG}
-                >
-                  Upvote on Top.GG
-                </button>
-              </div>
-              <div>
-                <button
-                  className="btn-info hover:scale-105 transition-all w-48"
-                  onClick={openSupportServerInvite}
-                >
-                  Join Support Server
-                </button>
-              </div>
-              <div>
-                <button
-                  className="btn-info hover:scale-105 transition-all w-48"
-                  onClick={openDEL}
-                >
-                  Upvote on DEL
-                </button>
-              </div>
+              <a
+                className="btn-info hover:scale-105 transition-all w-48"
+                href={TOP_GG_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Upvote on Top.GG
+              </a>
+
+              <a
+                className="btn-info hover:scale-105 transition-all w-48"
+                href={SUPPORT_SERVER_INVITE_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Join Support Server
+              </a>
+
+              <a
+                className="btn-info hover:scale-105 transition-all w-48"
+                href={DEL_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Upvote on DEL
+              </a>
             </div>
           </div>
           <div className="text-center py-2">
             <div className="inline-flex gap-2 flex-col md:flex-row">
-              <button
+              <a
                 className="btn-secondary hover:scale-105 transition-all w-48"
-                onClick={openPP}
+                href={PRIVACY_POLICY_URL}
+                target="_blank"
+                rel="noreferrer"
               >
                 Privacy Policy
-              </button>
-              <button
+              </a>
+              <a
                 className="btn-secondary hover:scale-105 transition-all w-48"
-                onClick={openTOS}
+                href={TERMS_OF_SERVICE_URL}
+                target="_blank"
+                rel="noreferrer"
               >
                 Terms of Service
-              </button>
+              </a>
             </div>
           </div>
         </div>
